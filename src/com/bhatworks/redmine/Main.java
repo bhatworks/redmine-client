@@ -87,13 +87,28 @@ public class Main extends FragmentActivity implements ActionBar.OnNavigationList
 	}
 	
 	@Override
-	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-			searchIcon.expandActionView();
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_MENU) {
+			event.startTracking();
 			return true;
 		}
+		return super.onKeyDown(keyCode, event);
+	}
+	
+	@Override
+	public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_MENU) {
+			return searchIcon.expandActionView();
+		}
+		return super.onKeyLongPress(keyCode, event);
+	}
+	
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_SEARCH) {
+			return searchIcon.expandActionView();
+		}
 		return super.onKeyUp(keyCode, event);
-		
 	}
 	
 	@Override
