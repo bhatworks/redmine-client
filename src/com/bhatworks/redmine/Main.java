@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,8 @@ import com.bhatworks.redmine.lib.RefreshReloader;
 public class Main extends FragmentActivity implements ActionBar.OnNavigationListener,
 		OnQueryTextListener {
 	
+	private static final String TAG_UI = "Redmine-UI";
+
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 	
 	private Thread progressThread;
@@ -83,6 +86,22 @@ public class Main extends FragmentActivity implements ActionBar.OnNavigationList
 		searchIcon = menu.findItem(R.id.menu_search);
 		SearchView sv = new SearchView(this);
 		sv.setOnQueryTextListener(this);
+		searchIcon.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+			
+			@Override
+			public boolean onMenuItemActionExpand(MenuItem item) {
+				Log.d(TAG_UI, "reload-icon is hidden now");
+				reloadIcon.setVisible(false);
+				return true;
+			}
+			
+			@Override
+			public boolean onMenuItemActionCollapse(MenuItem item) {
+				Log.d(TAG_UI, "reload-icon is visible now");
+				reloadIcon.setVisible(true);
+				return true;
+			}
+		});
 		return true;
 	}
 	
@@ -98,6 +117,7 @@ public class Main extends FragmentActivity implements ActionBar.OnNavigationList
 	@Override
 	public boolean onKeyLongPress(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
+			Log.d(TAG_UI, "search using menu key long-press");
 			return searchIcon.expandActionView();
 		}
 		return super.onKeyLongPress(keyCode, event);
