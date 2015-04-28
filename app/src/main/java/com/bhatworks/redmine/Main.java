@@ -4,7 +4,7 @@ import android.app.ActionBar;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -15,7 +15,7 @@ import android.widget.SearchView.OnQueryTextListener;
 
 import com.bhatworks.redmine.lib.RefreshReloader;
 
-public class Main extends FragmentActivity implements ActionBar.OnNavigationListener,
+public class Main extends AppCompatActivity implements ActionBar.OnNavigationListener,
         OnQueryTextListener {
 
     private static final String TAG_UI = "Redmine-UI";

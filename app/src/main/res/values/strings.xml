@@ -4,5 +4,7 @@
     <string name="issues_section">Issues</string>
     <string name="projects_section">Projects</string>
     <string name="title_activity_main">Redmine Sweeper</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
