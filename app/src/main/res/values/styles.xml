@@ -1,6 +1,41 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
+    <style name="AppTheme.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="popupTheme">@style/AppTheme.ActionBar.Popup</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.Popup" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/background_material_light</item>
+    </style>
+
+    <style name="AppTheme.NavDrawer">
+        <item name="android:background">@color/drawer_color</item>
+    </style>
+
+    <style name="AppTheme.ListItem">
+        <item name="android:paddingLeft">@dimen/keyline_nav_drawer_horiz_margin</item>
+        <item name="android:paddingRight">@dimen/keyline_nav_drawer_horiz_margin</item>
+    </style>
+
+    <style name="AppTheme.NavDrawer.Item" parent="AppTheme.ListItem">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/min_touch_size</item>
+        <item name="android:minHeight">@dimen/min_touch_size</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:drawablePadding">24dp</item>
+        <item name="android:color">@color/primary_text</item>
+    </style>
 </resources>

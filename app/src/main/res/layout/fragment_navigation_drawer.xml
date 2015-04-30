@@ -1,0 +1,74 @@
+<LinearLayout
+    android:id="@+id/drawer_list"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.NavDrawer"
+    tools:context=".ui.fragment.Navigat1ionDrawerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/account_switcher_bg"
+        android:minHeight="@dimen/subtitle_height"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/account_switcher"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/subtitle_height"
+            android:layout_marginBottom="@dimen/spacing_content_area_vertical_margin"
+            android:layout_marginLeft="@dimen/keyline_nav_drawer_horiz_margin"
+            android:layout_marginRight="@dimen/keyline_nav_drawer_horiz_margin" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/divider"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_content_area_vertical_margin"
+            android:showDividers="beginning">
+
+            <TextView
+                android:id="@+id/item_issues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_nav_issues"
+                android:drawableStart="@drawable/ic_nav_issues"
+                android:text="@string/title_issues"
+                android:theme="@style/AppTheme.NavDrawer.Item" />
+
+            <TextView
+                android:id="@+id/item_projects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_nav_projects"
+                android:drawableStart="@drawable/ic_nav_projects"
+                android:text="@string/title_projects"
+                android:theme="@style/AppTheme.NavDrawer.Item" />
+
+            <TextView
+                android:id="@+id/item_users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_nav_users"
+                android:drawableStart="@drawable/ic_nav_users"
+                android:text="@string/title_users"
+                android:theme="@style/AppTheme.NavDrawer.Item" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

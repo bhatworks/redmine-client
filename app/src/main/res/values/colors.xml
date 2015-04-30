@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#ffd94a3a</color>
+    <color name="primary_dark">#ffae1400</color>
+    <color name="accent">#ff507aaa</color>
+    <color name="drawer_color">#fffefefe</color>
+    <color name="primary_text">#ff000000</color>
+    <color name="divider">#ffd0d0d0</color>
+    <color name="account_switcher_bg">#ffe3ecf5</color>
+</resources>
