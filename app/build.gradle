@@ -9,6 +9,8 @@ android {
         applicationId "com.bhatworks.redmine"
         minSdkVersion 15
         targetSdkVersion 22
+        versionCode readVersionCode()
+        versionName readVersionName()
     }
 
     buildTypes {
